@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-class ScreenListModel {
-    var data:[RowModel]
+class ScreenListModel: ObservableObject {
+    @Published var data:[RowModel]
     var screenSize:Int{
         get {
             data.count
@@ -46,7 +46,7 @@ class ScreenListModel {
 
 struct ScreenList: View {
 
-    let model:ScreenListModel
+    @EnvironmentObject var model:ScreenListModel
     
     var body: some View {
         List{
@@ -73,6 +73,7 @@ struct ScreenList: View {
 
 struct ScreenList_Previews: PreviewProvider {
     static var previews: some View {
-        ScreenList(model: ScreenListModel(4))
+        ScreenList()
+        .environmentObject(ScreenListModel(4))
     }
 }
