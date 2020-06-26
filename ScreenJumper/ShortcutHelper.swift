@@ -66,6 +66,16 @@ class ShortcutRepository: ObservableObject {
         let size = ShortcutRepository.restoreSize()
         assigns = []
         assignSize = size
+
+        CGDisplayRegisterReconfigurationCallback({ (id, flags, pointer) in
+                   print("wtf:\(id) \(flags)")
+            //TODO 只监听显示器增减还不能覆盖所有情况，比如镜像显示器。暂不继续深入
+//                   if ((flags.rawValue & (CGDisplayChangeSummaryFlags.addFlag.rawValue | CGDisplayChangeSummaryFlags.removeFlag.rawValue)) != 0) {
+                       let size = ShortcutRepository.restoreSize()
+                    ShortcutRepository.shared.assigns = []
+                    ShortcutRepository.shared.assignSize = size
+//                   }
+               }, nil)
     }
     
     func register() {

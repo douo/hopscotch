@@ -12,15 +12,7 @@ let SFHelper = ScreenFocusHelper()
 
 class ScreenFocusHelper: NSObject {
     override init() {
-        CGDisplayRegisterReconfigurationCallback({ (id, flags, pointer) in
-            print("wtf:\(id) \(flags)")
-            if ((flags.rawValue & CGDisplayChangeSummaryFlags.addFlag.rawValue) != 0) {
-                print("display has been added:\(id)")
-            }
-            else if ((flags.rawValue & CGDisplayChangeSummaryFlags.removeFlag.rawValue) != 0) {
-                print(" display has been removed:\(id)")
-            }
-        }, nil)
+       
     }
     private func screens() -> [NSScreen]{
         return NSScreen.screens
