@@ -5,7 +5,7 @@
   Created by Tiou Lims on 2020/6/26.
   Copyright © 2020 Tiou Lims. All rights reserved.
 */
-"Focus Next Screen" = "下一屏幕";
-"Focus Previous Screen" = "上一屏幕";
+"Focus Next Screen:" = "下一屏幕：";
+"Focus Previous Screen:" = "上一屏幕：";
 "Screen %d" = "屏幕 %d";
-"Assign" = "指定屏幕";
+"Assign:" = "指定屏幕：";

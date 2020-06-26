@@ -17,19 +17,19 @@ struct ContentView: View {
         VStack(alignment: .leading){
             HStack(spacing: 0) {
                 HStack{
-                    Text(NSLocalizedString("Focus Next Screen", comment: ""))
+                    Text(NSLocalizedString("Focus Next Screen:", comment: ""))
                     ShortcutView(focusType: .Next, keyPath: "values.shortcut.next")
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
                 Spacer()
                 HStack{
-                    Text(NSLocalizedString("Focus Previous Screen", comment: ""))
+                    Text(NSLocalizedString("Focus Previous Screen:", comment: ""))
                     ShortcutView(focusType: .Previous, keyPath: "values.shortcut.previous")
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
             }
             Spacer()
-            Text(NSLocalizedString("Assign", comment: ""))
+            Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(ScreenListModel())
         }.padding(20)
     }
