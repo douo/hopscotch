@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+    {
+      "name" : "ShortcutRecorder",
+      "hash" : "34c256c70a90c9275481567f63d64580c00ddc04d438ea86f15135558d924644",
+      "linking" : "dynamic"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "3.2",
+  "iOS" : [
+
+  ]
+}
