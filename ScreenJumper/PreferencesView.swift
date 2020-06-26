@@ -11,7 +11,7 @@ import ShortcutRecorder
 
 
 
-struct ContentView: View {
+struct PreferencesView: View {
     var displaySize = 4
     var body: some View {
         VStack(alignment: .leading){
@@ -37,8 +37,8 @@ struct ContentView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PreferencesView()
     }
 }

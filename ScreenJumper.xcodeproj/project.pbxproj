@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2019BB6724A5D657000F2589 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2019BB6924A5D657000F2589 /* Localizable.strings */; };
+		2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019BB6C24A5F18F000F2589 /* ViewController.swift */; };
 		2038A40B24A438B100E668C2 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */; };
 		2051DE4A24A342E2004F5D09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4924A342E2004F5D09 /* AppDelegate.swift */; };
-		2051DE4C24A342E2004F5D09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4B24A342E2004F5D09 /* ContentView.swift */; };
+		2051DE4C24A342E2004F5D09 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4B24A342E2004F5D09 /* PreferencesView.swift */; };
 		2051DE4E24A342E5004F5D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2051DE4D24A342E5004F5D09 /* Assets.xcassets */; };
 		2051DE5124A342E5004F5D09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2051DE5024A342E5004F5D09 /* Preview Assets.xcassets */; };
 		2051DE5424A342E5004F5D09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2051DE5224A342E5004F5D09 /* Main.storyboard */; };
@@ -57,10 +58,11 @@
 /* Begin PBXFileReference section */
 		2019BB6824A5D657000F2589 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2019BB6B24A5D7A5000F2589 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2019BB6C24A5F18F000F2589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = Carthage/Build/Mac/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		2051DE4624A342E2004F5D09 /* ScreenJumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenJumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE4924A342E2004F5D09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2051DE4B24A342E2004F5D09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2051DE4B24A342E2004F5D09 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		2051DE4D24A342E5004F5D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2051DE5024A342E5004F5D09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2051DE5324A342E5004F5D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,7 +133,8 @@
 				209B492424A5843600943AE7 /* widget */,
 				2051DE4924A342E2004F5D09 /* AppDelegate.swift */,
 				2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */,
-				2051DE4B24A342E2004F5D09 /* ContentView.swift */,
+				2051DE4B24A342E2004F5D09 /* PreferencesView.swift */,
+				2019BB6C24A5F18F000F2589 /* ViewController.swift */,
 				2051DE4D24A342E5004F5D09 /* Assets.xcassets */,
 				2051DE5224A342E5004F5D09 /* Main.storyboard */,
 				2051DE5524A342E5004F5D09 /* Info.plist */,
@@ -340,7 +343,8 @@
 				209B492A24A5878500943AE7 /* ScreenList.swift in Sources */,
 				2051DE7924A35A04004F5D09 /* ScreenFocusHelper.swift in Sources */,
 				2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */,
-				2051DE4C24A342E2004F5D09 /* ContentView.swift in Sources */,
+				2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */,
+				2051DE4C24A342E2004F5D09 /* PreferencesView.swift in Sources */,
 				2051DE4A24A342E2004F5D09 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
