@@ -16,6 +16,9 @@ struct RowModel {
             screenName != nil
         }
     }
+    var key:String {
+        get { "values.shortcut.screen_\(idx)" }
+    }
 }
 
 
@@ -31,7 +34,7 @@ struct ScreenRow: View {
                 Text("None")
             }
             Spacer()
-            ShortcutView(focusType: .Index(model.idx), keyPath: "values.shortcut.display_\(model.idx)")
+            ShortcutView(focusType: .Index(model.idx), keyPath: model.key)
                 .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
         }
     }

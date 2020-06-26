@@ -125,7 +125,7 @@
 		2051DE4824A342E2004F5D09 /* ScreenJumper */ = {
 			isa = PBXGroup;
 			children = (
-				209B492424A5843600943AE7 /* view */,
+				209B492424A5843600943AE7 /* widget */,
 				2051DE4924A342E2004F5D09 /* AppDelegate.swift */,
 				2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */,
 				2051DE4B24A342E2004F5D09 /* ContentView.swift */,
@@ -164,14 +164,14 @@
 			path = ScreenJumperUITests;
 			sourceTree = "<group>";
 		};
-		209B492424A5843600943AE7 /* view */ = {
+		209B492424A5843600943AE7 /* widget */ = {
 			isa = PBXGroup;
 			children = (
 				2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */,
 				209B492724A5864700943AE7 /* ScreenRow.swift */,
 				209B492924A5878500943AE7 /* ScreenList.swift */,
 			);
-			path = view;
+			path = widget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

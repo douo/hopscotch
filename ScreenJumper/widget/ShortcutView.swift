@@ -22,7 +22,7 @@ struct ShortcutView: NSViewRepresentable {
     func makeNSView(context: Context) -> RecorderControl {
         let recorder = RecorderControl(frame: .zero)
         let defaults = NSUserDefaultsController.shared
-        let options: [NSBindingOption : NSValueTransformerName] = [NSBindingOption.valueTransformerName: .keyedUnarchiveFromDataTransformerName]
+        let options: [NSBindingOption : NSValueTransformerName] = [.valueTransformerName:.keyedUnarchiveFromDataTransformerName]
         let action:ShortcutAction
         switch focusType {
         case .Next:
@@ -48,7 +48,7 @@ struct ShortcutView: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: RecorderControl, context: Context) {
-        
+        //print("update\(context)")
     }
     
     typealias NSViewType = RecorderControl

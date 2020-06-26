@@ -29,7 +29,8 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            ScreenList().environmentObject(ScreenListModel(4))
+            
+            ScreenList().environmentObject(ScreenListModel())
         }.padding(20)
     }
     

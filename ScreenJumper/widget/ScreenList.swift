@@ -16,11 +16,13 @@ class ScreenListModel: ObservableObject {
         }
         
         set {
-            let count = max(NSScreen.screens.count,newValue)
-            while(count < self.data.count){
-                self.data.removeLast()
+            let size = max(NSScreen.screens.count,newValue)
+            while(size < self.data.count){
+                let ele = self.data.removeLast()
+                let defaults = NSUserDefaultsController.shared
+                defaults.setValue(nil,forKeyPath: ele.key)
             }
-            while(count > self.data.count){
+            while(size > self.data.count){
                 let screenName:String?
                 let index = self.data.count
                 if index < NSScreen.screens.count{
@@ -30,22 +32,36 @@ class ScreenListModel: ObservableObject {
                 }
                 self.data.append(RowModel(idx: index, screenName: screenName))
             }
+            ScreenListModel.updateSize(size)
         }
     }
     
-    init(_ screenSize:Int) {
-         data = []
-         for idx in 0..<NSScreen.screens.count {
-             data.append(RowModel(idx: idx, screenName:  NSScreen.screens[idx].localizedName))
-         }
-         self.screenSize = screenSize
-     }
-     
+    private static func updateSize(_ size:Int){
+        let defaults = NSUserDefaultsController.shared.defaults
+        defaults.set(size, forKey: "values.screenSize")
+    }
+    
+    private  static func restoreSize() -> Int{
+        let defaults = NSUserDefaultsController.shared.defaults
+        var size = defaults.integer(forKey: "values.screenSize")
+        if(size == 0 || size < NSScreen.screens.count){
+            size = NSScreen.screens.count
+            updateSize(size)
+        }
+        return size
+    }
+    
+    init() {
+        let size = ScreenListModel.restoreSize()
+        data = []
+        self.screenSize = size
+    }
+    
 }
 
 
 struct ScreenList: View {
-
+    
     @EnvironmentObject var model:ScreenListModel
     
     var body: some View {
@@ -64,9 +80,8 @@ struct ScreenList: View {
                     self.model.screenSize -= 1
                 }){
                     Text("-")
-                }
+                }.disabled(model.screenSize == NSScreen.screens.count)
             }
-            
         }
     }
 }
@@ -74,6 +89,6 @@ struct ScreenList: View {
 struct ScreenList_Previews: PreviewProvider {
     static var previews: some View {
         ScreenList()
-        .environmentObject(ScreenListModel(4))
+            .environmentObject(ScreenListModel())
     }
 }

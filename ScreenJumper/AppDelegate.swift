@@ -16,7 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        print("launching")
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
 
