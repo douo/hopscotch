@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2019BB6724A5D657000F2589 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2019BB6924A5D657000F2589 /* Localizable.strings */; };
 		2038A40B24A438B100E668C2 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */; };
 		2051DE4A24A342E2004F5D09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4924A342E2004F5D09 /* AppDelegate.swift */; };
 		2051DE4C24A342E2004F5D09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4B24A342E2004F5D09 /* ContentView.swift */; };
@@ -54,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2019BB6824A5D657000F2589 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2019BB6B24A5D7A5000F2589 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = Carthage/Build/Mac/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		2051DE4624A342E2004F5D09 /* ScreenJumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenJumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE4924A342E2004F5D09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 				2051DE5524A342E5004F5D09 /* Info.plist */,
 				2051DE5624A342E6004F5D09 /* ScreenJumper.entitlements */,
 				2051DE4F24A342E5004F5D09 /* Preview Content */,
+				2019BB6924A5D657000F2589 /* Localizable.strings */,
 			);
 			path = ScreenJumper;
 			sourceTree = "<group>";
@@ -262,6 +266,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 2051DE3D24A342E2004F5D09;
 			productRefGroup = 2051DE4724A342E2004F5D09 /* Products */;
@@ -281,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2051DE5424A342E5004F5D09 /* Main.storyboard in Resources */,
+				2019BB6724A5D657000F2589 /* Localizable.strings in Resources */,
 				2051DE5124A342E5004F5D09 /* Preview Assets.xcassets in Resources */,
 				2051DE4E24A342E5004F5D09 /* Assets.xcassets in Resources */,
 			);
@@ -370,6 +377,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2019BB6924A5D657000F2589 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2019BB6824A5D657000F2589 /* zh-Hans */,
+				2019BB6B24A5D7A5000F2589 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2051DE5224A342E5004F5D09 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -385,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -445,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

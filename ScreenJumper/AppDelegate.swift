@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        print(NSLocalizedString("Focus Next Screen", comment: ""))
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
 

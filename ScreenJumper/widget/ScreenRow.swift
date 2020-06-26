@@ -26,7 +26,7 @@ struct ScreenRow: View {
     var model:RowModel
     var body: some View {
         HStack{
-            Text("Screen \(model.idx)")
+            Text(String(format: NSLocalizedString("Screen %d", comment: ""), arguments: [model.idx]))
             Spacer()
             if model.hasScreen {
                 Text(model.screenName!)

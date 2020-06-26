@@ -14,22 +14,22 @@ import ShortcutRecorder
 struct ContentView: View {
     var displaySize = 4
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             HStack(spacing: 0) {
                 HStack{
-                    Text("Focus Next Screen")
+                    Text(NSLocalizedString("Focus Next Screen", comment: ""))
                     ShortcutView(focusType: .Next, keyPath: "values.shortcut.next")
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
                 Spacer()
                 HStack{
-                    Text("Focus Previous Screen")
+                    Text(NSLocalizedString("Focus Previous Screen", comment: ""))
                     ShortcutView(focusType: .Previous, keyPath: "values.shortcut.previous")
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
             }
             Spacer()
-            
+            Text(NSLocalizedString("Assign", comment: ""))
             ScreenList().environmentObject(ScreenListModel())
         }.padding(20)
     }
