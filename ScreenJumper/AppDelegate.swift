@@ -20,27 +20,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateController(withIdentifier: .init(stringLiteral: "preferencesID")) as? ViewController else { return }
         let window = NSWindow(contentViewController: vc)
-           window.makeKeyAndOrderFront(nil)
-//        if(self.window == nil){
-//            // Create the SwiftUI view that provides the window contents.
-//            let contentView = ContentView()
-//            // Create the window and set the content view.
-//            let window = NSWindow(
-//                contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-//                styleMask: [.titled, .closable,
-//                            .fullSizeContentView],
-//                backing: .buffered, defer: false)
-//            window.center()
-//            window.setFrameAutosaveName("Main Window")
-//            window.contentView = NSHostingView(rootView: contentView)
-//            window.makeKeyAndOrderFront(nil)
-//            self.window = window
-//        }else{
-//            NSApp.activate(ignoringOtherApps: true)
-//        }
+        window.makeKeyAndOrderFront(nil)
+        //        if(self.window == nil){
+        //            // Create the SwiftUI view that provides the window contents.
+        //            let contentView = ContentView()
+        //            // Create the window and set the content view.
+        //            let window = NSWindow(
+        //                contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+        //                styleMask: [.titled, .closable,
+        //                            .fullSizeContentView],
+        //                backing: .buffered, defer: false)
+        //            window.center()
+        //            window.setFrameAutosaveName("Main Window")
+        //            window.contentView = NSHostingView(rootView: contentView)
+        //            window.makeKeyAndOrderFront(nil)
+        //            self.window = window
+        //        }else{
+        //            NSApp.activate(ignoringOtherApps: true)
+        //        }
+    }
+    
+    /**
+     * 重置用户配置
+     */
+    private func clearData(){
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        clearData()
         ShortcutRepository.shared.register()
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.title = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String

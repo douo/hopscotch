@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 import ShortcutRecorder
 
 enum FocusType{
@@ -43,9 +44,25 @@ class ShortcutRepository: ObservableObject {
         }
     }
     
+    private static func createBase
+        (focusType: FocusType, keyPath:String, shortcutStr:String) -> ShortcutModel{
+        let data = ShortcutModel(focusType: focusType, keyPath: keyPath)
+        let defaults = NSUserDefaultsController.shared
+        let obj = defaults.value(forKeyPath: keyPath)
+        if(obj == nil){
+            let options: [NSBindingOption : NSValueTransformerName] = [.valueTransformerName:.keyedUnarchiveFromDataTransformerName]
+            let recorder = RecorderControl()
+            //FIXME 不通过 RecorderControl 设置默认值
+            recorder.bind(.value, to: defaults, withKeyPath: keyPath, options: options)
+            recorder.objectValue = Shortcut(keyEquivalent: shortcutStr)
+            recorder.unbind(.value)
+        }
+        return data
+    }
+    
     init() {
-        next = ShortcutModel(focusType: .Next, keyPath: "values.shortcut.next")
-        previous = ShortcutModel(focusType: .Previous, keyPath: "values.shortcut.previous")
+        next = ShortcutRepository.createBase(focusType: .Next,keyPath: "values.shortcut.next",shortcutStr: "⌃⇧.")
+        previous = ShortcutRepository.createBase(focusType: .Previous,keyPath: "values.shortcut.previous",shortcutStr: "⌃⇧,")
         let size = ShortcutRepository.restoreSize()
         assigns = []
         assignSize = size

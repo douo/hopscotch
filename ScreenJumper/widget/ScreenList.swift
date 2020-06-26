@@ -9,58 +9,6 @@
 import SwiftUI
 import ShortcutRecorder
 
-class ScreenListModel: ObservableObject {
-    @Published var data:[ScreenRowVO]
-    var screenSize:Int{
-        get {
-            data.count
-        }
-        
-        set {
-            let size = max(NSScreen.screens.count,newValue)
-            while(size < self.data.count){
-                let ele = self.data.removeLast()
-                let defaults = NSUserDefaultsController.shared
-                defaults.setValue(nil,forKeyPath: ele.shortcut.keyPath)
-            }
-            while(size > self.data.count){
-                let screenName:String?
-                let index = self.data.count
-                if index < NSScreen.screens.count{
-                    screenName = NSScreen.screens[index].localizedName
-                }else{
-                    screenName = nil
-                }
-                self.data.append(ScreenRowVO(idx: index, screenName: screenName,shortcut:ShortcutModel(focusType: .Next, keyPath:"")))
-            }
-            ScreenListModel.updateSize(size)
-        }
-    }
-    
-    private static func updateSize(_ size:Int){
-        let defaults = NSUserDefaultsController.shared.defaults
-        defaults.set(size, forKey: "values.screenSize")
-    }
-    
-    private  static func restoreSize() -> Int{
-        let defaults = NSUserDefaultsController.shared.defaults
-        var size = defaults.integer(forKey: "values.screenSize")
-        if(size == 0 || size < NSScreen.screens.count){
-            size = NSScreen.screens.count
-            updateSize(size)
-        }
-        return size
-    }
-    
-    init() {
-        let size = ScreenListModel.restoreSize()
-        data = []
-        self.screenSize = size
-    }
-    
-}
-
-
 struct ScreenList: View {
     @EnvironmentObject var repo:ShortcutRepository
     
