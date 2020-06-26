@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import ShortcutRecorder
 
 class ScreenListModel: ObservableObject {
-    @Published var data:[RowModel]
+    @Published var data:[ScreenRowVO]
     var screenSize:Int{
         get {
             data.count
@@ -20,7 +21,7 @@ class ScreenListModel: ObservableObject {
             while(size < self.data.count){
                 let ele = self.data.removeLast()
                 let defaults = NSUserDefaultsController.shared
-                defaults.setValue(nil,forKeyPath: ele.key)
+                defaults.setValue(nil,forKeyPath: ele.shortcut.keyPath)
             }
             while(size > self.data.count){
                 let screenName:String?
@@ -30,7 +31,7 @@ class ScreenListModel: ObservableObject {
                 }else{
                     screenName = nil
                 }
-                self.data.append(RowModel(idx: index, screenName: screenName))
+                self.data.append(ScreenRowVO(idx: index, screenName: screenName,shortcut:ShortcutModel(focusType: .Next, keyPath:"")))
             }
             ScreenListModel.updateSize(size)
         }
@@ -61,26 +62,33 @@ class ScreenListModel: ObservableObject {
 
 
 struct ScreenList: View {
-    
-    @EnvironmentObject var model:ScreenListModel
+    @EnvironmentObject var repo:ShortcutRepository
     
     var body: some View {
         List{
-            ForEach(model.data,id: \.idx){ row in
+            ForEach(repo.assigns.enumerated().map {(idx, ele) in
+                let screenName:String?
+                if idx < NSScreen.screens.count{
+                    screenName = NSScreen.screens[idx].localizedName
+                }else{
+                    screenName = nil
+                }
+                return ScreenRowVO(idx:idx,screenName:screenName,shortcut: ele)
+            }, id: \.idx){ row in
                 ScreenRow(model: row)
             }
             HStack(alignment: .bottom){
                 Spacer()
                 Button(action:{
-                    self.model.screenSize += 1
+                    self.repo.assignSize += 1
                 }){
                     Text("+")
                 }
                 Button(action:{
-                    self.model.screenSize -= 1
+                    self.repo.assignSize -= 1
                 }){
                     Text("-")
-                }.disabled(model.screenSize == NSScreen.screens.count)
+                }.disabled( self.repo.assignSize == NSScreen.screens.count)
             }
         }
     }
@@ -89,6 +97,6 @@ struct ScreenList: View {
 struct ScreenList_Previews: PreviewProvider {
     static var previews: some View {
         ScreenList()
-            .environmentObject(ScreenListModel())
+            .environmentObject(ShortcutRepository.shared)
     }
 }

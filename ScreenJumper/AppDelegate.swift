@@ -8,12 +8,11 @@
 
 import Cocoa
 import SwiftUI
-
+import ShortcutRecorder
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var menu: NSMenu?
-    @IBOutlet weak var firstMenuItem: NSMenuItem?
     
     var statusItem: NSStatusItem?
     
@@ -42,12 +41,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        ShortcutRepository.shared.register()
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.title = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         if let menu = menu {
             statusItem?.menu = menu
         }
-        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

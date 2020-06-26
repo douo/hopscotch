@@ -9,41 +9,14 @@
 import SwiftUI
 import ShortcutRecorder
 
-enum FocusType{
-    case Next
-    case Previous
-    case Index(Int)
-}
-
 struct ShortcutView: NSViewRepresentable {
-    var focusType: FocusType
-    var keyPath:String
-    
+    var model:ShortcutModel
     func makeNSView(context: Context) -> RecorderControl {
         let recorder = RecorderControl(frame: .zero)
         let defaults = NSUserDefaultsController.shared
         let options: [NSBindingOption : NSValueTransformerName] = [.valueTransformerName:.keyedUnarchiveFromDataTransformerName]
-        let action:ShortcutAction
-        switch focusType {
-        case .Next:
-            action = ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusNext()
-                return true
-            }
-        case .Previous:
-            action = ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusPrevious()
-                return true
-            }
-        case .Index(let idx):
-            action = ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusIndex(index: idx)
-                return true
-            }
-        }
-        GlobalShortcutMonitor.shared.addAction(action, forKeyEvent: .down)
-        recorder.bind(.value, to: defaults, withKeyPath: keyPath, options: options)
-        //recorder.objectValue = Shortcut(keyEquivalent: "⇧^.")
+        model.register()
+        recorder.bind(.value, to: defaults, withKeyPath: model.keyPath, options: options)
         return recorder
     }
     
@@ -57,6 +30,6 @@ struct ShortcutView: NSViewRepresentable {
 
 struct ShortcutView_Previews: PreviewProvider {
     static var previews: some View {
-        ShortcutView(focusType: .Next, keyPath: "values.shortcut.previous")
+        ShortcutView(model: ShortcutModel(focusType: .Next, keyPath: "values.shortcut.previous"))
     }
 }

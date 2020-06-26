@@ -13,24 +13,25 @@ import ShortcutRecorder
 
 struct PreferencesView: View {
     var displaySize = 4
+    let repo = ShortcutRepository.shared
     var body: some View {
         VStack(alignment: .leading){
             HStack(spacing: 0) {
                 HStack{
                     Text(NSLocalizedString("Focus Next Screen:", comment: ""))
-                    ShortcutView(focusType: .Next, keyPath: "values.shortcut.next")
+                    ShortcutView(model: repo.next)
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
                 Spacer()
                 HStack{
                     Text(NSLocalizedString("Focus Previous Screen:", comment: ""))
-                    ShortcutView(focusType: .Previous, keyPath: "values.shortcut.previous")
+                    ShortcutView(model: repo.previous)
                         .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
                 }
             }
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
-            ScreenList().environmentObject(ScreenListModel())
+            ScreenList().environmentObject(repo)
         }.padding(20)
     }
     
