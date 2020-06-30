@@ -50,10 +50,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        clearData()
+        //clearData()
         ShortcutRepository.shared.register()
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.title = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
+        statusItem?.button?.image = NSImage.init(named: "ic_status_bar")
         if let menu = menu {
             statusItem?.menu = menu
         }
