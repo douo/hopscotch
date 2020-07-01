@@ -1,10 +1,8 @@
 # What
 
-[logo.png]
+![](doc/screen_jumper_logo.png)
 
 ScreenJumper 是一款 macos 的小工具，可以帮助你通过快捷键在不同的屏幕之间跳动鼠标。
-
-[intro.gif]
 
 # Why
 
@@ -19,6 +17,8 @@ macos 实际有两种焦点
 
 # How
 
-[下载][https://github.com/douo/screen-jumper/releases/]
+![](doc/screen_jumper_intro.gif)
+
+[下载](https://github.com/douo/screen-jumper/releases/)
 
 默认 `⇧⌃.` 切换下一个屏幕， `⇧⌃,` 切换上一个屏幕。所有快捷键皆可定制，也支持 CatchMouse 那样直接指定显示器切换。
