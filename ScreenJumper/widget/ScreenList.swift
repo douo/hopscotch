@@ -14,7 +14,7 @@ struct ScreenList: View {
     
     var body: some View {
         List{
-            ForEach(repo.assigns.enumerated().map {(idx, ele) in
+            ForEach(repo.assigns.enumerated().map { (idx, ele) -> ScreenRowVO in
                 let screenName:String?
                 if idx < NSScreen.screens.count{
                     screenName = NSScreen.screens[idx].localizedName
