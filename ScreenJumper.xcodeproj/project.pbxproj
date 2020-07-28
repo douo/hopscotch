@@ -10,7 +10,6 @@
 		2019BB6724A5D657000F2589 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2019BB6924A5D657000F2589 /* Localizable.strings */; };
 		2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019BB6C24A5F18F000F2589 /* ViewController.swift */; };
 		2019BB6F24A62CAD000F2589 /* ShortcutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */; };
-		2038A40B24A438B100E668C2 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */; };
 		2051DE4A24A342E2004F5D09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4924A342E2004F5D09 /* AppDelegate.swift */; };
 		2051DE4C24A342E2004F5D09 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE4B24A342E2004F5D09 /* PreferencesView.swift */; };
 		2051DE4E24A342E5004F5D09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2051DE4D24A342E5004F5D09 /* Assets.xcassets */; };
@@ -22,7 +21,8 @@
 		2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
-		20D9F3D024A3B11700CD5B81 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6037614924CFCDA2005FB7A9 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */; };
+		6037614A24CFCDA2005FB7A9 /* ShortcutRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				20D9F3D024A3B11700CD5B81 /* (null) in Embed Frameworks */,
+				6037614A24CFCDA2005FB7A9 /* ShortcutRecorder.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,7 +61,6 @@
 		2019BB6B24A5D7A5000F2589 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2019BB6C24A5F18F000F2589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutHelper.swift; sourceTree = "<group>"; };
-		2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShortcutRecorder.framework; path = Carthage/Build/Mac/ShortcutRecorder.framework; sourceTree = "<group>"; };
 		2051DE4624A342E2004F5D09 /* ScreenJumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenJumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE4924A342E2004F5D09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2051DE4B24A342E2004F5D09 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutView.swift; sourceTree = "<group>"; };
 		209B492724A5864700943AE7 /* ScreenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRow.swift; sourceTree = "<group>"; };
 		209B492924A5878500943AE7 /* ScreenList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenList.swift; sourceTree = "<group>"; };
+		6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2038A40B24A438B100E668C2 /* ShortcutRecorder.framework in Frameworks */,
+				6037614924CFCDA2005FB7A9 /* ShortcutRecorder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 				2051DE5E24A342E6004F5D09 /* ScreenJumperTests */,
 				2051DE6924A342E6004F5D09 /* ScreenJumperUITests */,
 				2051DE4724A342E2004F5D09 /* Products */,
-				2038A40A24A438B100E668C2 /* ShortcutRecorder.framework */,
+				6037614524CFCD6F005FB7A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +184,14 @@
 			path = widget;
 			sourceTree = "<group>";
 		};
+		6037614524CFCD6F005FB7A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,13 +203,14 @@
 				2051DE4324A342E2004F5D09 /* Frameworks */,
 				2051DE4424A342E2004F5D09 /* Resources */,
 				20D9F3D124A3B11700CD5B81 /* Embed Frameworks */,
-				2038A40C24A438CD00E668C2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ScreenJumper;
+			packageProductDependencies = (
+			);
 			productName = Demo;
 			productReference = 2051DE4624A342E2004F5D09 /* ScreenJumper.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +285,8 @@
 				"zh-Hant",
 			);
 			mainGroup = 2051DE3D24A342E2004F5D09;
+			packageReferences = (
+			);
 			productRefGroup = 2051DE4724A342E2004F5D09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -314,28 +325,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2038A40C24A438CD00E668C2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/ShortcutRecorder.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ShortcutRecorder.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2051DE4224A342E2004F5D09 /* Sources */ = {
@@ -525,16 +514,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ScreenJumper/ScreenJumper.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ScreenJumper/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				INFOPLIST_FILE = ScreenJumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,16 +539,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ScreenJumper/ScreenJumper.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ScreenJumper/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				INFOPLIST_FILE = ScreenJumper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
