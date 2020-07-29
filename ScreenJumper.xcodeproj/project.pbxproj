@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,8 +21,7 @@
 		2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
-		6037614924CFCDA2005FB7A9 /* ShortcutRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */; };
-		6037614A24CFCDA2005FB7A9 /* ShortcutRecorder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6037614D24D1034F005FB7A9 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 6037614C24D1034F005FB7A9 /* ShortcutRecorder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,20 +40,6 @@
 			remoteInfo = Demo;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		20D9F3D124A3B11700CD5B81 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6037614A24CFCDA2005FB7A9 /* ShortcutRecorder.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2019BB6824A5D657000F2589 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -79,7 +64,6 @@
 		2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutView.swift; sourceTree = "<group>"; };
 		209B492724A5864700943AE7 /* ScreenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRow.swift; sourceTree = "<group>"; };
 		209B492924A5878500943AE7 /* ScreenList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenList.swift; sourceTree = "<group>"; };
-		6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6037614924CFCDA2005FB7A9 /* ShortcutRecorder.framework in Frameworks */,
+				6037614D24D1034F005FB7A9 /* ShortcutRecorder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +171,6 @@
 		6037614524CFCD6F005FB7A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,7 +185,6 @@
 				2051DE4224A342E2004F5D09 /* Sources */,
 				2051DE4324A342E2004F5D09 /* Frameworks */,
 				2051DE4424A342E2004F5D09 /* Resources */,
-				20D9F3D124A3B11700CD5B81 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +192,7 @@
 			);
 			name = ScreenJumper;
 			packageProductDependencies = (
+				6037614C24D1034F005FB7A9 /* ShortcutRecorder */,
 			);
 			productName = Demo;
 			productReference = 2051DE4624A342E2004F5D09 /* ScreenJumper.app */;
@@ -286,6 +269,7 @@
 			);
 			mainGroup = 2051DE3D24A342E2004F5D09;
 			packageReferences = (
+				6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = 2051DE4724A342E2004F5D09 /* Products */;
 			projectDirPath = "";
@@ -683,6 +667,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6037614C24D1034F005FB7A9 /* ShortcutRecorder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			productName = ShortcutRecorder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2051DE3E24A342E2004F5D09 /* Project object */;
 }
