@@ -21,7 +21,7 @@
 		2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
-		6037614D24D1034F005FB7A9 /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 6037614C24D1034F005FB7A9 /* ShortcutRecorder */; };
+		60FD0C8024D258F700FD281E /* ShortcutRecorder in Frameworks */ = {isa = PBXBuildFile; productRef = 60FD0C7F24D258F700FD281E /* ShortcutRecorder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6037614D24D1034F005FB7A9 /* ShortcutRecorder in Frameworks */,
+				60FD0C8024D258F700FD281E /* ShortcutRecorder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			);
 			name = ScreenJumper;
 			packageProductDependencies = (
-				6037614C24D1034F005FB7A9 /* ShortcutRecorder */,
+				60FD0C7F24D258F700FD281E /* ShortcutRecorder */,
 			);
 			productName = Demo;
 			productReference = 2051DE4624A342E2004F5D09 /* ScreenJumper.app */;
@@ -269,7 +269,7 @@
 			);
 			mainGroup = 2051DE3D24A342E2004F5D09;
 			packageReferences = (
-				6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
+				60FD0C7E24D258F700FD281E /* XCRemoteSwiftPackageReference "ShortcutRecorder" */,
 			);
 			productRefGroup = 2051DE4724A342E2004F5D09 /* Products */;
 			projectDirPath = "";
@@ -669,7 +669,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
+		60FD0C7E24D258F700FD281E /* XCRemoteSwiftPackageReference "ShortcutRecorder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Kentzo/ShortcutRecorder.git";
 			requirement = {
@@ -680,9 +680,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6037614C24D1034F005FB7A9 /* ShortcutRecorder */ = {
+		60FD0C7F24D258F700FD281E /* ShortcutRecorder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6037614B24D1034F005FB7A9 /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
+			package = 60FD0C7E24D258F700FD281E /* XCRemoteSwiftPackageReference "ShortcutRecorder" */;
 			productName = ShortcutRecorder;
 		};
 /* End XCSwiftPackageProductDependency section */
