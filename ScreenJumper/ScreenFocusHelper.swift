@@ -57,6 +57,7 @@ class ScreenFocusHelper: NSObject {
     
     
     private func centerMouseIn(screen:NSScreen){
+        SFNotifier.hellow(screen: screen)
         let cX = screen.frame.width/2
         let cY = screen.frame.height/2
         let number = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")]
