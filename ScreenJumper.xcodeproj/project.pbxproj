@@ -19,7 +19,7 @@
 		2051DE6B24A342E6004F5D09 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE6A24A342E6004F5D09 /* DemoUITests.swift */; };
 		2051DE7924A35A04004F5D09 /* ScreenFocusHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */; };
 		2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */; };
-		20549261250F5A1A008ED4B8 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549260250F5A1A008ED4B8 /* Notifier.swift */; };
+		20549261250F5A1A008ED4B8 /* HighlightHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549260250F5A1A008ED4B8 /* HighlightHelper.swift */; };
 		20549263250F6CCC008ED4B8 /* NotifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20549262250F6CCC008ED4B8 /* NotifierView.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
@@ -79,7 +79,7 @@
 		2051DE6C24A342E6004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFocusHelper.swift; sourceTree = "<group>"; };
 		2051DE7A24A3A7AC004F5D09 /* ShortcutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutView.swift; sourceTree = "<group>"; };
-		20549260250F5A1A008ED4B8 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		20549260250F5A1A008ED4B8 /* HighlightHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightHelper.swift; sourceTree = "<group>"; };
 		20549262250F6CCC008ED4B8 /* NotifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifierView.swift; sourceTree = "<group>"; };
 		209B492724A5864700943AE7 /* ScreenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRow.swift; sourceTree = "<group>"; };
 		209B492924A5878500943AE7 /* ScreenList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenList.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				2051DE4B24A342E2004F5D09 /* PreferencesView.swift */,
 				2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */,
 				2019BB6C24A5F18F000F2589 /* ViewController.swift */,
-				20549260250F5A1A008ED4B8 /* Notifier.swift */,
+				20549260250F5A1A008ED4B8 /* HighlightHelper.swift */,
 				2051DE4D24A342E5004F5D09 /* Assets.xcassets */,
 				2051DE5224A342E5004F5D09 /* Main.storyboard */,
 				2051DE5524A342E5004F5D09 /* Info.plist */,
@@ -344,7 +344,7 @@
 				2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */,
 				2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */,
 				2051DE4C24A342E2004F5D09 /* PreferencesView.swift in Sources */,
-				20549261250F5A1A008ED4B8 /* Notifier.swift in Sources */,
+				20549261250F5A1A008ED4B8 /* HighlightHelper.swift in Sources */,
 				20549263250F6CCC008ED4B8 /* NotifierView.swift in Sources */,
 				2051DE4A24A342E2004F5D09 /* AppDelegate.swift in Sources */,
 			);
