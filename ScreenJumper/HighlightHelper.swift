@@ -24,10 +24,11 @@ class HightlightHelper {
         }()
     }
     func notify(screen:NSScreen){
+        print("screen:\(screen.description):\(screen.frame)")
         closeHandler?()
         let w = prepareWindow(screen: screen)
         windowController.window = w
-        closeHandler = ImageHighlight().self.showOn(window: w)
+        closeHandler = RippleHightlight().self.showOn(window: w)
     }
     
     
@@ -50,6 +51,25 @@ class HightlightHelper {
         w.makeKeyAndOrderFront(nil)
         return w;
     }
+}
+
+private class RippleHightlight{
+        func showOn(window:NSWindow) -> (() -> Void) {
+            print("window:\(window.frame)")
+            let layer = SJRippleLayer()
+            layer.fillColor = .init(red: 0.5, green: 0.5, blue: 0.5, alpha:0.12)
+                   layer.opacity = 0
+            layer.bounds = NSMakeRect(0, 0, window.frame.width, window.frame.height)
+            layer.maximumRadius = max(window.frame.width, window.frame.height)/2.0 //window frame 坐标是相对全局（多屏整合）显示
+            window.contentView?.wantsLayer = true
+            window.contentView?.layer?.addSublayer(layer)
+            layer.startRipple(at: CGPoint(x:layer.bounds.midX,y:layer.bounds.midY), animated: true, completion: {
+                window.close()
+            })
+            return {
+                window.close()
+            }
+        }
 }
 
 private class ImageHighlight : Highlight{
