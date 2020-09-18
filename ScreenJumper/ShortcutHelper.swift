@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 import ShortcutRecorder
+import Combine
 
 enum FocusType{
     case Next
@@ -16,12 +17,19 @@ enum FocusType{
     case Index(Int)
 }
 
+private let kHintTypeKey = "values.hintType"
+private let kScreenSizeKey = "values.screenSize"
+private let kNextKey = "values.shortcut.next"
+private let kPreviousKey = "values.shortcut.previous"
+
+
 class ShortcutRepository: ObservableObject {
     static let shared = ShortcutRepository()
     
     let next:ShortcutModel
     let previous:ShortcutModel
     
+    @Published var hintType: HintType
     @Published var assigns:[ShortcutModel]
     
     var assignSize: Int{
@@ -40,42 +48,42 @@ class ShortcutRepository: ObservableObject {
                 let sm = ShortcutModel(focusType:.Index(index),keyPath:"values.shortcut.screen_\(index)")
                 assigns.append(sm)
             }
-            ShortcutRepository.updateSize(size)
+            updateSize(size)
         }
     }
     
-    private static func createBase
-        (focusType: FocusType, keyPath:String, shortcutStr:String) -> ShortcutModel{
-        let data = ShortcutModel(focusType: focusType, keyPath: keyPath)
-        let defaults = NSUserDefaultsController.shared
-        let obj = defaults.value(forKeyPath: keyPath)
-        if(obj == nil){
-            let options: [NSBindingOption : NSValueTransformerName] = [.valueTransformerName:.keyedUnarchiveFromDataTransformerName]
-            let recorder = RecorderControl()
-            //FIXME 不通过 RecorderControl 设置默认值
-            recorder.bind(.value, to: defaults, withKeyPath: keyPath, options: options)
-            recorder.objectValue = Shortcut(keyEquivalent: shortcutStr)
-            recorder.unbind(.value)
-        }
-        return data
-    }
+    
+    private var subscribers = Set<AnyCancellable>()
     
     init() {
-        next = ShortcutRepository.createBase(focusType: .Next,keyPath: "values.shortcut.next",shortcutStr: "⌃⇧.")
-        previous = ShortcutRepository.createBase(focusType: .Previous,keyPath: "values.shortcut.previous",shortcutStr: "⌃⇧,")
-        let size = ShortcutRepository.restoreSize()
+        next = createBase(for: .Next,keyPath: kNextKey,shortcutStr: "⌃⇧.")
+        previous = createBase(for: .Previous,keyPath: kPreviousKey,shortcutStr: "⌃⇧,")
+        let size = restoreSize()
         assigns = []
+        hintType = restoreHintType()
+        
         assignSize = size
-
+        
         CGDisplayRegisterReconfigurationCallback({ (id, flags, pointer) in
-                   print("wtf:\(id) \(flags)")
+            print("wtf:\(id) \(flags)")
             //TODO 只监听显示器增减还不能覆盖所有情况，比如镜像显示器。暂不继续深入
-//                   if ((flags.rawValue & (CGDisplayChangeSummaryFlags.addFlag.rawValue | CGDisplayChangeSummaryFlags.removeFlag.rawValue)) != 0) {
-                       let size = ShortcutRepository.restoreSize()
-                    ShortcutRepository.shared.assigns = []
-                    ShortcutRepository.shared.assignSize = size
-//                   }
-               }, nil)
+            //                   if ((flags.rawValue & (CGDisplayChangeSummaryFlags.addFlag.rawValue | CGDisplayChangeSummaryFlags.removeFlag.rawValue)) != 0) {
+            let size = restoreSize()
+            ShortcutRepository.shared.assigns = []
+            ShortcutRepository.shared.assignSize = size
+            //                   }
+        }, nil)
+        
+        self.$hintType
+            .map{$0.value}
+            .sink{
+                let defaults = NSUserDefaultsController.shared.defaults
+                defaults.set($0, forKey: kHintTypeKey)}
+            .store(in: &subscribers) // 不 store 的话， 订阅器会主动取消，可能是没有引用导致被 ARC 回收
+        
+        ScreenFocusHelper.shared.didCenterInCallback = { screen in
+            HintHelper.shared.notify(screen: screen, type: self.hintType)
+        }
     }
     
     func register() {
@@ -85,20 +93,44 @@ class ShortcutRepository: ObservableObject {
             item.register()
         }
     }
-    
-    private static func updateSize(_ size:Int){
-        let defaults = NSUserDefaultsController.shared.defaults
-        defaults.set(size, forKey: "values.screenSize")
+}
+private func createBase(for focusType: FocusType, keyPath:String, shortcutStr:String) -> ShortcutModel{
+    let data = ShortcutModel(focusType: focusType, keyPath: keyPath)
+    let defaults = NSUserDefaultsController.shared
+    let obj = defaults.value(forKeyPath: keyPath)
+    if(obj == nil){
+        let options: [NSBindingOption : NSValueTransformerName] = [.valueTransformerName:.keyedUnarchiveFromDataTransformerName]
+        let recorder = RecorderControl()
+        //FIXME 不通过 RecorderControl 设置默认值
+        recorder.bind(.value, to: defaults, withKeyPath: keyPath, options: options)
+        recorder.objectValue = Shortcut(keyEquivalent: shortcutStr)
+        recorder.unbind(.value)
     }
-    
-    private  static func restoreSize() -> Int{
-        let defaults = NSUserDefaultsController.shared.defaults
-        var size = defaults.integer(forKey: "values.screenSize")
-        if(size == 0 || size < NSScreen.screens.count){
-            size = NSScreen.screens.count
-            updateSize(size)
-        }
-        return size
+    return data
+}
+
+private func updateSize(_ size:Int){
+    let defaults = NSUserDefaultsController.shared.defaults
+    defaults.set(size, forKey: kScreenSizeKey)
+}
+
+private  func restoreSize() -> Int{
+    let defaults = NSUserDefaultsController.shared.defaults
+    var size = defaults.integer(forKey: kScreenSizeKey)
+    if(size == 0 || size < NSScreen.screens.count){
+        size = NSScreen.screens.count
+        updateSize(size)
+    }
+    return size
+}
+
+private func restoreHintType() -> HintType{
+    let defaults = NSUserDefaultsController.shared.defaults
+    print("default:\(defaults.string(forKey: kHintTypeKey))")
+    if let value = defaults.string(forKey: kHintTypeKey) {
+        return HintType.from(value)
+    }else{
+        return .Ripple
     }
 }
 
@@ -120,17 +152,17 @@ struct ShortcutModel{
         switch focusType {
         case .Next:
             action =  ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusNext()
+                ScreenFocusHelper.shared.focusNext()
                 return true
             }
         case .Previous:
             action =  ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusPrevious()
+                ScreenFocusHelper.shared.focusPrevious()
                 return true
             }
         case .Index(let idx):
             action =  ShortcutAction(keyPath: keyPath, of: defaults) { _ in
-                SFHelper.focusIndex(index: idx)
+                ScreenFocusHelper.shared.focusIndex(index: idx)
                 return true
             }
         }

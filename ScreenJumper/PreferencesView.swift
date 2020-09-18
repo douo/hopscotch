@@ -13,7 +13,7 @@ import ShortcutRecorder
 
 struct PreferencesView: View {
     var displaySize = 4
-    let repo = ShortcutRepository.shared
+    @EnvironmentObject var repo:ShortcutRepository
     var body: some View {
         VStack(alignment: .leading){
             HStack(spacing: 0) {
@@ -32,9 +32,24 @@ struct PreferencesView: View {
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(repo)
+            Spacer()
+            HStack{
+                Text(NSLocalizedString("Hint:", comment: ""))
+                MenuButton(
+                    label: Text(repo.hintType.value),
+                    content: {
+                        ForEach(HintType.allCases, id: \.self){ type in
+                            Button(type.value){
+                                print("select:\(type)")
+                                repo.hintType = type
+                                print("result:\(repo.hintType)")
+                            }
+                        }
+                    }
+                )
+            }
         }.padding(20)
     }
-    
 }
 
 

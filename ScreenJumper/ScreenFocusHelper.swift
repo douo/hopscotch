@@ -8,9 +8,10 @@
 
 import Cocoa
 
-let SFHelper = ScreenFocusHelper()
-
 class ScreenFocusHelper: NSObject {
+    static let shared =  ScreenFocusHelper()
+    var didCenterInCallback: ((NSScreen)->Void)?
+    
     override init() {
        
     }
@@ -57,7 +58,7 @@ class ScreenFocusHelper: NSObject {
     
     
     private func centerMouseIn(screen:NSScreen){
-        HightlightHelper.singleton.notify(screen: screen)
+        didCenterInCallback?(screen)
         let cX = screen.frame.width/2
         let cY = screen.frame.height/2
         let number = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")]
