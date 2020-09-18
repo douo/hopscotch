@@ -23,7 +23,7 @@
 		2054926625134C84008ED4B8 /* SJRippleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2054926525134C84008ED4B8 /* SJRippleLayer.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
-		20EDD0C12515290700842DC0 /* Library in Frameworks */ = {isa = PBXBuildFile; productRef = 20EDD0C02515290700842DC0 /* Library */; };
+		20EE350A25152FEA004D58CB /* Library in Frameworks */ = {isa = PBXBuildFile; productRef = 20EE350925152FEA004D58CB /* Library */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20EDD0C12515290700842DC0 /* Library in Frameworks */,
+				20EE350A25152FEA004D58CB /* Library in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +201,7 @@
 				2051DE4224A342E2004F5D09 /* Sources */,
 				2051DE4324A342E2004F5D09 /* Frameworks */,
 				2051DE4424A342E2004F5D09 /* Resources */,
+				20EE350E251530A7004D58CB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -208,7 +209,7 @@
 			);
 			name = ScreenJumper;
 			packageProductDependencies = (
-				20EDD0C02515290700842DC0 /* Library */,
+				20EE350925152FEA004D58CB /* Library */,
 			);
 			productName = Demo;
 			productReference = 2051DE4624A342E2004F5D09 /* ScreenJumper.app */;
@@ -324,6 +325,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20EE350E251530A7004D58CB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2051DE4224A342E2004F5D09 /* Sources */ = {
@@ -686,7 +707,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		20EDD0C02515290700842DC0 /* Library */ = {
+		20EE350925152FEA004D58CB /* Library */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Library;
 		};
