@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ScreenJumper.xcodeproj">
+      location = "group:Library">
    </FileRef>
    <FileRef
-      location = "group:ShortcutRecorder/ShortcutRecorder.xcodeproj">
+      location = "group:ScreenJumper.xcodeproj">
    </FileRef>
 </Workspace>
