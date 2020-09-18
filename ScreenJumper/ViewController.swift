@@ -20,7 +20,7 @@ class ViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         if let window = view.window {
-            let contentView = PreferencesView()
+            let contentView = PreferencesView().environmentObject(ShortcutRepository.shared)
             window.styleMask.remove(.resizable)
             window.styleMask.remove(.miniaturizable)
             window.center()
