@@ -8,7 +8,7 @@
 
 import SwiftUI
 import ShortcutRecorder
-
+import LaunchAtLogin
 
 
 struct PreferencesView: View {
@@ -40,14 +40,15 @@ struct PreferencesView: View {
                     content: {
                         ForEach(HintType.allCases, id: \.self){ type in
                             Button(type.value){
-                                print("select:\(type)")
                                 repo.hintType = type
-                                print("result:\(repo.hintType)")
                             }
                         }
                     }
                 )
             }
+            LaunchAtLogin.Toggle {
+                        Text(NSLocalizedString("Launch at login", comment: ""))
+                    }
         }.padding(20)
     }
 }

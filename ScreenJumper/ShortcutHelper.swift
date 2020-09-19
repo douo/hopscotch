@@ -10,6 +10,7 @@ import Foundation
 import Cocoa
 import ShortcutRecorder
 import Combine
+import LaunchAtLogin
 
 enum FocusType{
     case Next
@@ -18,6 +19,7 @@ enum FocusType{
 }
 
 private let kHintTypeKey = "values.hintType"
+private let kLaunchAtLoginKey = "values.launchAtLogin"
 private let kScreenSizeKey = "values.screenSize"
 private let kNextKey = "values.shortcut.next"
 private let kPreviousKey = "values.shortcut.previous"
@@ -77,6 +79,7 @@ class ShortcutRepository: ObservableObject {
         self.$hintType
             .map{$0.value}
             .sink{
+                print("sink:\($0)")
                 let defaults = NSUserDefaultsController.shared.defaults
                 defaults.set($0, forKey: kHintTypeKey)}
             .store(in: &subscribers) // 不 store 的话， 订阅器会主动取消，可能是没有引用导致被 ARC 回收
@@ -84,6 +87,13 @@ class ShortcutRepository: ObservableObject {
         ScreenFocusHelper.shared.didCenterInCallback = { screen in
             HintHelper.shared.notify(screen: screen, type: self.hintType)
         }
+        
+        LaunchAtLogin.isEnabled = restoreLaunchAtLogin()
+        LaunchAtLogin.publisher
+            .sink{
+                let defaults = NSUserDefaultsController.shared.defaults
+                defaults.set($0, forKey: kLaunchAtLoginKey)}
+            .store(in: &subscribers)
     }
     
     func register() {
@@ -124,9 +134,14 @@ private  func restoreSize() -> Int{
     return size
 }
 
+private  func restoreLaunchAtLogin() -> Bool{
+    let defaults = NSUserDefaultsController.shared.defaults
+    return defaults.bool(forKey: kLaunchAtLoginKey)
+}
+
 private func restoreHintType() -> HintType{
     let defaults = NSUserDefaultsController.shared.defaults
-    print("default:\(defaults.string(forKey: kHintTypeKey))")
+    
     if let value = defaults.string(forKey: kHintTypeKey) {
         return HintType.from(value)
     }else{

@@ -10,3 +10,4 @@
 "Screen %d" = "屏幕 %d";
 "Assign:" = "指定屏幕：";
 "Hint:" = "视觉提示：";
+"Launch at login" = "开机自启动";

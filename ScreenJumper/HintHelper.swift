@@ -169,13 +169,13 @@ enum HintType: CaseIterable{
     
     static func from(_ vaule:String) -> HintType{
         switch vaule {
-        case "none":
+        case "None":
             return .None
-        case "logo":
+        case "Logo":
             return .Logo
-        case "redspot":
+        case "Redspot":
             return .RedSpot
-        case "ripple":
+        case "Ripple":
             return .Ripple
         default:
             return .None

@@ -24,6 +24,7 @@ let package = Package(
         .target(
             name: "Library",
             dependencies: [
+                // swift 5.2 强制要求 package
                 .product(name: "ShortcutRecorder",package: "ShortcutRecorder"),
                 .product(name: "LaunchAtLogin",package: "LaunchAtLogin")
             ]),
