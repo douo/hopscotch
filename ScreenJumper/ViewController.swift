@@ -21,7 +21,7 @@ class ViewController: NSViewController {
         super.viewWillAppear()
         if let window = view.window {
             let contentView = PreferencesView().environmentObject(ShortcutRepository.shared)
-            window.styleMask.remove(.resizable)
+//            window.styleMask.remove(.resizable)
             window.styleMask.remove(.miniaturizable)
             window.center()
             window.setFrameAutosaveName("Main Window")

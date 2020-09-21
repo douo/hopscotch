@@ -17,18 +17,20 @@ struct PreferencesView: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack(spacing: 0) {
-                HStack{
-                    Text(NSLocalizedString("Focus Next Screen:", comment: ""))
-                    ShortcutView(model: repo.next)
-                        .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
-                }
+                HStack(alignment: VerticalAlignment.center, spacing: 0){
+                    Text(NSLocalizedString("Next Screen:", comment: ""))
+                    ShortcutView(model: repo.next).frame(minWidth: 30, idealWidth: 30, maxWidth: 148, minHeight: 30, idealHeight: 30, maxHeight: 30, alignment: .center)
+                        .background(Color.green)
+//                    Text("long long str")
+                }.background(Color.red)
                 Spacer()
                 HStack{
-                    Text(NSLocalizedString("Focus Previous Screen:", comment: ""))
-                    ShortcutView(model: repo.previous)
-                        .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
-                }
-            }
+                    Text(NSLocalizedString("Previous Screen:", comment: ""))
+                   ShortcutView(model: repo.previous).frame(minWidth: 30, idealWidth: 30, maxWidth: 148, minHeight: 30, idealHeight: 30, maxHeight: 30, alignment: .center)
+                    .background(Color.green)
+                    //Text("long long str")
+                }.background(Color.red)
+            }.background(Color.blue)
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(repo)

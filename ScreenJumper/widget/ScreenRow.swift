@@ -31,8 +31,7 @@ struct ScreenRow: View {
                 Text("None")
             }
             Spacer()
-            ShortcutView(model: model.shortcut)
-                .frame(minWidth: 30, idealWidth: 80, maxWidth: 120, minHeight: 10, idealHeight: 30, maxHeight: 100, alignment: .center)
+            ShortcutView(model: model.shortcut).frame(minWidth: 30, idealWidth: 30, maxWidth: 148, minHeight: 30, idealHeight: 30, maxHeight: 30, alignment: .center)
         }
     }
 }
