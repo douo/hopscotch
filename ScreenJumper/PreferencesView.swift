@@ -19,18 +19,16 @@ struct PreferencesView: View {
             HStack(spacing: 0) {
                 HStack(alignment: VerticalAlignment.center, spacing: 0){
                     Text(NSLocalizedString("Next Screen:", comment: ""))
-                    ShortcutView(model: repo.next).frame(minWidth: 30, idealWidth: 30, maxWidth: 148, minHeight: 30, idealHeight: 30, maxHeight: 30, alignment: .center)
-                        .background(Color.green)
-//                    Text("long long str")
-                }.background(Color.red)
+                    ShortcutView(model: repo.next)
+                        .fixedSize()
+                }
                 Spacer()
                 HStack{
                     Text(NSLocalizedString("Previous Screen:", comment: ""))
-                   ShortcutView(model: repo.previous).frame(minWidth: 30, idealWidth: 30, maxWidth: 148, minHeight: 30, idealHeight: 30, maxHeight: 30, alignment: .center)
-                    .background(Color.green)
-                    //Text("long long str")
-                }.background(Color.red)
-            }.background(Color.blue)
+                    ShortcutView(model: repo.previous)
+                        .fixedSize()
+                }
+            }
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(repo)

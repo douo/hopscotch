@@ -67,7 +67,6 @@ class ShortcutRepository: ObservableObject {
         assignSize = size
         
         CGDisplayRegisterReconfigurationCallback({ (id, flags, pointer) in
-            print("wtf:\(id) \(flags)")
             //TODO 只监听显示器增减还不能覆盖所有情况，比如镜像显示器。暂不继续深入
             //                   if ((flags.rawValue & (CGDisplayChangeSummaryFlags.addFlag.rawValue | CGDisplayChangeSummaryFlags.removeFlag.rawValue)) != 0) {
             let size = restoreSize()
@@ -79,7 +78,6 @@ class ShortcutRepository: ObservableObject {
         self.$hintType
             .map{$0.value}
             .sink{
-                print("sink:\($0)")
                 let defaults = NSUserDefaultsController.shared.defaults
                 defaults.set($0, forKey: kHintTypeKey)}
             .store(in: &subscribers) // 不 store 的话， 订阅器会主动取消，可能是没有引用导致被 ARC 回收
