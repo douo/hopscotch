@@ -5,6 +5,6 @@
       location = "group:Library">
    </FileRef>
    <FileRef
-      location = "group:ScreenJumper.xcodeproj">
+      location = "group:/Volumes/Pickle/Playground/Hopscreen/Hopscreen.xcodeproj">
    </FileRef>
 </Workspace>

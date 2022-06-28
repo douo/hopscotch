@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2014D2AA286AF4B700D7F3BD /* Library in Frameworks */ = {isa = PBXBuildFile; productRef = 2014D2A9286AF4B700D7F3BD /* Library */; };
 		2019BB6724A5D657000F2589 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2019BB6924A5D657000F2589 /* Localizable.strings */; };
 		2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019BB6C24A5F18F000F2589 /* ViewController.swift */; };
 		2019BB6F24A62CAD000F2589 /* ShortcutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */; };
@@ -23,7 +24,6 @@
 		2054926625134C84008ED4B8 /* SJRippleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2054926525134C84008ED4B8 /* SJRippleLayer.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
-		20EE350A25152FEA004D58CB /* Library in Frameworks */ = {isa = PBXBuildFile; productRef = 20EE350925152FEA004D58CB /* Library */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,18 +48,19 @@
 		2019BB6B24A5D7A5000F2589 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2019BB6C24A5F18F000F2589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutHelper.swift; sourceTree = "<group>"; };
-		2051DE4624A342E2004F5D09 /* ScreenJumper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenJumper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		203C0F1F286AF39300E6900F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../hopscreen/Library/Package.swift; sourceTree = "<group>"; };
+		2051DE4624A342E2004F5D09 /* Hopscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE4924A342E2004F5D09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2051DE4B24A342E2004F5D09 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		2051DE4D24A342E5004F5D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2051DE5024A342E5004F5D09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2051DE5324A342E5004F5D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2051DE5524A342E5004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2051DE5624A342E6004F5D09 /* ScreenJumper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScreenJumper.entitlements; sourceTree = "<group>"; };
-		2051DE5B24A342E6004F5D09 /* ScreenJumperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenJumperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2051DE5624A342E6004F5D09 /* Hopscreen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hopscreen.entitlements; sourceTree = "<group>"; };
+		2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE5F24A342E6004F5D09 /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		2051DE6124A342E6004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2051DE6624A342E6004F5D09 /* ScreenJumperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenJumperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE6A24A342E6004F5D09 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		2051DE6C24A342E6004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFocusHelper.swift; sourceTree = "<group>"; };
@@ -76,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20EE350A25152FEA004D58CB /* Library in Frameworks */,
+				2014D2AA286AF4B700D7F3BD /* Library in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,9 +101,9 @@
 		2051DE3D24A342E2004F5D09 = {
 			isa = PBXGroup;
 			children = (
-				2051DE4824A342E2004F5D09 /* ScreenJumper */,
-				2051DE5E24A342E6004F5D09 /* ScreenJumperTests */,
-				2051DE6924A342E6004F5D09 /* ScreenJumperUITests */,
+				2051DE4824A342E2004F5D09 /* Hopscreen */,
+				2051DE5E24A342E6004F5D09 /* HopscreenTests */,
+				2051DE6924A342E6004F5D09 /* HopscreenUITests */,
 				2051DE4724A342E2004F5D09 /* Products */,
 				6037614524CFCD6F005FB7A9 /* Frameworks */,
 			);
@@ -111,14 +112,14 @@
 		2051DE4724A342E2004F5D09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2051DE4624A342E2004F5D09 /* ScreenJumper.app */,
-				2051DE5B24A342E6004F5D09 /* ScreenJumperTests.xctest */,
-				2051DE6624A342E6004F5D09 /* ScreenJumperUITests.xctest */,
+				2051DE4624A342E2004F5D09 /* Hopscreen.app */,
+				2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */,
+				2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2051DE4824A342E2004F5D09 /* ScreenJumper */ = {
+		2051DE4824A342E2004F5D09 /* Hopscreen */ = {
 			isa = PBXGroup;
 			children = (
 				2054926425134C60008ED4B8 /* effect */,
@@ -132,11 +133,11 @@
 				2051DE4D24A342E5004F5D09 /* Assets.xcassets */,
 				2051DE5224A342E5004F5D09 /* Main.storyboard */,
 				2051DE5524A342E5004F5D09 /* Info.plist */,
-				2051DE5624A342E6004F5D09 /* ScreenJumper.entitlements */,
+				2051DE5624A342E6004F5D09 /* Hopscreen.entitlements */,
 				2051DE4F24A342E5004F5D09 /* Preview Content */,
 				2019BB6924A5D657000F2589 /* Localizable.strings */,
 			);
-			path = ScreenJumper;
+			path = Hopscreen;
 			sourceTree = "<group>";
 		};
 		2051DE4F24A342E5004F5D09 /* Preview Content */ = {
@@ -147,22 +148,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2051DE5E24A342E6004F5D09 /* ScreenJumperTests */ = {
+		2051DE5E24A342E6004F5D09 /* HopscreenTests */ = {
 			isa = PBXGroup;
 			children = (
 				2051DE5F24A342E6004F5D09 /* DemoTests.swift */,
 				2051DE6124A342E6004F5D09 /* Info.plist */,
 			);
-			path = ScreenJumperTests;
+			path = HopscreenTests;
 			sourceTree = "<group>";
 		};
-		2051DE6924A342E6004F5D09 /* ScreenJumperUITests */ = {
+		2051DE6924A342E6004F5D09 /* HopscreenUITests */ = {
 			isa = PBXGroup;
 			children = (
 				2051DE6A24A342E6004F5D09 /* DemoUITests.swift */,
 				2051DE6C24A342E6004F5D09 /* Info.plist */,
 			);
-			path = ScreenJumperUITests;
+			path = HopscreenUITests;
 			sourceTree = "<group>";
 		};
 		2054926425134C60008ED4B8 /* effect */ = {
@@ -186,6 +187,7 @@
 		6037614524CFCD6F005FB7A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				203C0F1F286AF39300E6900F /* Package.swift */,
 				6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */,
 			);
 			name = Frameworks;
@@ -194,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2051DE4524A342E2004F5D09 /* ScreenJumper */ = {
+		2051DE4524A342E2004F5D09 /* Hopscreen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumper" */;
+			buildConfigurationList = 2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscreen" */;
 			buildPhases = (
 				2051DE4224A342E2004F5D09 /* Sources */,
 				2051DE4324A342E2004F5D09 /* Frameworks */,
@@ -207,17 +209,17 @@
 			);
 			dependencies = (
 			);
-			name = ScreenJumper;
+			name = Hopscreen;
 			packageProductDependencies = (
-				20EE350925152FEA004D58CB /* Library */,
+				2014D2A9286AF4B700D7F3BD /* Library */,
 			);
 			productName = Demo;
-			productReference = 2051DE4624A342E2004F5D09 /* ScreenJumper.app */;
+			productReference = 2051DE4624A342E2004F5D09 /* Hopscreen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2051DE5A24A342E6004F5D09 /* ScreenJumperTests */ = {
+		2051DE5A24A342E6004F5D09 /* HopscreenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumperTests" */;
+			buildConfigurationList = 2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenTests" */;
 			buildPhases = (
 				2051DE5724A342E6004F5D09 /* Sources */,
 				2051DE5824A342E6004F5D09 /* Frameworks */,
@@ -228,14 +230,14 @@
 			dependencies = (
 				2051DE5D24A342E6004F5D09 /* PBXTargetDependency */,
 			);
-			name = ScreenJumperTests;
+			name = HopscreenTests;
 			productName = DemoTests;
-			productReference = 2051DE5B24A342E6004F5D09 /* ScreenJumperTests.xctest */;
+			productReference = 2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2051DE6524A342E6004F5D09 /* ScreenJumperUITests */ = {
+		2051DE6524A342E6004F5D09 /* HopscreenUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumperUITests" */;
+			buildConfigurationList = 2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenUITests" */;
 			buildPhases = (
 				2051DE6224A342E6004F5D09 /* Sources */,
 				2051DE6324A342E6004F5D09 /* Frameworks */,
@@ -246,9 +248,9 @@
 			dependencies = (
 				2051DE6824A342E6004F5D09 /* PBXTargetDependency */,
 			);
-			name = ScreenJumperUITests;
+			name = HopscreenUITests;
 			productName = DemoUITests;
-			productReference = 2051DE6624A342E6004F5D09 /* ScreenJumperUITests.xctest */;
+			productReference = 2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +276,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "ScreenJumper" */;
+			buildConfigurationList = 2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscreen" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -291,9 +293,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2051DE4524A342E2004F5D09 /* ScreenJumper */,
-				2051DE5A24A342E6004F5D09 /* ScreenJumperTests */,
-				2051DE6524A342E6004F5D09 /* ScreenJumperUITests */,
+				2051DE4524A342E2004F5D09 /* Hopscreen */,
+				2051DE5A24A342E6004F5D09 /* HopscreenTests */,
+				2051DE6524A342E6004F5D09 /* HopscreenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -385,12 +387,12 @@
 /* Begin PBXTargetDependency section */
 		2051DE5D24A342E6004F5D09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2051DE4524A342E2004F5D09 /* ScreenJumper */;
+			target = 2051DE4524A342E2004F5D09 /* Hopscreen */;
 			targetProxy = 2051DE5C24A342E6004F5D09 /* PBXContainerItemProxy */;
 		};
 		2051DE6824A342E6004F5D09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2051DE4524A342E2004F5D09 /* ScreenJumper */;
+			target = 2051DE4524A342E2004F5D09 /* Hopscreen */;
 			targetProxy = 2051DE6724A342E6004F5D09 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -535,20 +537,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ScreenJumper/ScreenJumper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hopscreen/Hopscreen.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ScreenJumper/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopscreen/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ScreenJumper/Info.plist;
+				INFOPLIST_FILE = Hopscreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.osx.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -560,20 +564,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = ScreenJumper/ScreenJumper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hopscreen/Hopscreen.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"ScreenJumper/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Hopscreen/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ScreenJumper/Info.plist;
+				INFOPLIST_FILE = Hopscreen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.osx.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -599,7 +605,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScreenJumper.app/Contents/MacOS/ScreenJumper";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscreen.app/Contents/MacOS/Hopscreen";
 			};
 			name = Debug;
 		};
@@ -621,7 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScreenJumper.app/Contents/MacOS/ScreenJumper";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscreen.app/Contents/MacOS/Hopscreen";
 			};
 			name = Release;
 		};
@@ -668,7 +674,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "ScreenJumper" */ = {
+		2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE6D24A342E6004F5D09 /* Debug */,
@@ -677,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumper" */ = {
+		2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscreen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7024A342E6004F5D09 /* Debug */,
@@ -686,7 +692,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumperTests" */ = {
+		2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7324A342E6004F5D09 /* Debug */,
@@ -695,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "ScreenJumperUITests" */ = {
+		2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7624A342E6004F5D09 /* Debug */,
@@ -707,7 +713,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		20EE350925152FEA004D58CB /* Library */ = {
+		2014D2A9286AF4B700D7F3BD /* Library */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Library;
 		};
