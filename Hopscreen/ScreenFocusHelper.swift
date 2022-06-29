@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Combine
+import CoreGraphics
 
 class ScreenFocusHelper: NSObject {
     static let shared =  ScreenFocusHelper()
@@ -47,6 +49,22 @@ class ScreenFocusHelper: NSObject {
         return nil
     }
     
+    private func findActive()  -> Optional<NSScreen> {
+        
+        guard let wins = CGWindowListCopyWindowInfo(
+            CGWindowListOption.init(rawValue:(CGWindowListOption.optionOnScreenOnly.rawValue | CGWindowListOption.excludeDesktopElements.rawValue)),
+            kCGNullWindowID) as? [[String: AnyObject]],
+              let pid = NSWorkspace.shared.frontmostApplication?.processIdentifier
+        else{
+            return nil
+        }
+        let actives = wins.filter({$0["kCGWindowOwnerPID"] as? Int32 == pid})
+        //TODO how to detect current focused window.
+
+        
+        return nil
+    }
+    
     private func previousOfMain() throws -> NSScreen{
         let scrs = screens()
         guard let main = findMain(), let mIndx = scrs.firstIndex(of: main) else{
@@ -73,7 +91,7 @@ class ScreenFocusHelper: NSObject {
         do {
             try centerMouseIn(screen: nextOfMain())
         } catch  {
-            print("User creation failed with error: \(error)")
+            print("Focus next failed. cause by: \(error)")
         }
     }
     
@@ -81,7 +99,15 @@ class ScreenFocusHelper: NSObject {
         do {
             try centerMouseIn(screen: previousOfMain())
         } catch  {
-            print("User creation failed with error: \(error)")
+            print("Focus previous failed. cause by: \(error)")
+        }
+    }
+    
+    func focusActive(){
+        do {
+            try centerMouseIn(screen: findActive())
+        } catch{
+            print("Focus active failed. cause by: \(error)")
         }
     }
     
