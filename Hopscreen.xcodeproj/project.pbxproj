@@ -24,6 +24,7 @@
 		2054926625134C84008ED4B8 /* SJRippleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2054926525134C84008ED4B8 /* SJRippleLayer.swift */; };
 		209B492824A5864700943AE7 /* ScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492724A5864700943AE7 /* ScreenRow.swift */; };
 		209B492A24A5878500943AE7 /* ScreenList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B492924A5878500943AE7 /* ScreenList.swift */; };
+		20D15F3028712FF2005C4289 /* AXUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D15F2F28712FF2005C4289 /* AXUIElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		2054926525134C84008ED4B8 /* SJRippleLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJRippleLayer.swift; sourceTree = "<group>"; };
 		209B492724A5864700943AE7 /* ScreenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRow.swift; sourceTree = "<group>"; };
 		209B492924A5878500943AE7 /* ScreenList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenList.swift; sourceTree = "<group>"; };
+		20D15F2F28712FF2005C4289 /* AXUIElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AXUIElement.swift; sourceTree = "<group>"; };
 		6037614624CFCD6F005FB7A9 /* ShortcutRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShortcutRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				2054926425134C60008ED4B8 /* effect */,
 				209B492424A5843600943AE7 /* widget */,
 				2051DE4924A342E2004F5D09 /* AppDelegate.swift */,
+				20D15F2F28712FF2005C4289 /* AXUIElement.swift */,
 				2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */,
 				2051DE4B24A342E2004F5D09 /* PreferencesView.swift */,
 				2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */,
@@ -359,6 +362,7 @@
 				2054926625134C84008ED4B8 /* SJRippleLayer.swift in Sources */,
 				2019BB6F24A62CAD000F2589 /* ShortcutHelper.swift in Sources */,
 				2051DE7B24A3A7AC004F5D09 /* ShortcutView.swift in Sources */,
+				20D15F3028712FF2005C4289 /* AXUIElement.swift in Sources */,
 				2019BB6D24A5F18F000F2589 /* ViewController.swift in Sources */,
 				2051DE4C24A342E2004F5D09 /* PreferencesView.swift in Sources */,
 				20549261250F5A1A008ED4B8 /* HintHelper.swift in Sources */,
@@ -551,7 +555,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.osx.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -566,11 +570,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hopscreen/Hopscreen.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Hopscreen/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q9JRKL6X9R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Hopscreen/Info.plist;
@@ -578,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.osx.jumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

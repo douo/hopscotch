@@ -15,6 +15,7 @@ import LaunchAtLogin
 enum FocusType{
     case Next
     case Previous
+    case Active
     case Index(Int)
 }
 
@@ -23,6 +24,7 @@ private let kLaunchAtLoginKey = "values.launchAtLogin"
 private let kScreenSizeKey = "values.screenSize"
 private let kNextKey = "values.shortcut.next"
 private let kPreviousKey = "values.shortcut.previous"
+private let kActiveKey = "values.shortcut.active"
 
 
 class ShortcutRepository: ObservableObject {
@@ -30,6 +32,7 @@ class ShortcutRepository: ObservableObject {
     
     let next:ShortcutModel
     let previous:ShortcutModel
+    let active:ShortcutModel
     
     @Published var hintType: HintType
     @Published var assigns:[ShortcutModel]
@@ -58,8 +61,9 @@ class ShortcutRepository: ObservableObject {
     private var subscribers = Set<AnyCancellable>()
     
     init() {
-        next = createBase(for: .Next,keyPath: kNextKey,shortcutStr: "⌃⇧.")
+        next = createBase(for: .Next,keyPath: kNextKey, shortcutStr: "⌃⇧.")
         previous = createBase(for: .Previous,keyPath: kPreviousKey,shortcutStr: "⌃⇧,")
+        active = createBase(for: .Active,keyPath: kActiveKey, shortcutStr: "⌃⇧/")
         let size = restoreSize()
         assigns = []
         hintType = restoreHintType()
@@ -97,6 +101,7 @@ class ShortcutRepository: ObservableObject {
     func register() {
         next.register()
         previous.register()
+        active.register()
         for item in assigns {
             item.register()
         }
@@ -171,6 +176,11 @@ struct ShortcutModel{
         case .Previous:
             action =  ShortcutAction(keyPath: keyPath, of: defaults) { _ in
                 ScreenFocusHelper.shared.focusPrevious()
+                return true
+            }
+        case .Active:
+            action =  ShortcutAction(keyPath: keyPath, of: defaults) { _ in
+                ScreenFocusHelper.shared.focusActive()
                 return true
             }
         case .Index(let idx):

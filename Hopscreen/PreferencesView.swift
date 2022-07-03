@@ -16,19 +16,39 @@ struct PreferencesView: View {
     @EnvironmentObject var repo:ShortcutRepository
     var body: some View {
         VStack(alignment: .leading){
-            HStack(spacing: 0) {
+            HStack() {
                 HStack(alignment: VerticalAlignment.center, spacing: 0){
                     Text(NSLocalizedString("Next Screen:", comment: ""))
+                    Spacer()
                     ShortcutView(model: repo.next)
                         .fixedSize()
                 }
                 Spacer()
                 HStack{
                     Text(NSLocalizedString("Previous Screen:", comment: ""))
+                    Spacer()
                     ShortcutView(model: repo.previous)
                         .fixedSize()
                 }
             }
+            Spacer()
+            HStack(alignment: VerticalAlignment.center, spacing: 0){
+                Text(NSLocalizedString("Active Screen:", comment: ""))
+                Spacer()
+                HStack(alignment: .center){
+                    Image(systemName: "exclamationmark.circle")
+                        .help(NSLocalizedString("Hopscreen needs Accessibility permissions to find active(keyboard focusing) screen.", comment: ""))
+                    
+                    ShortcutView(model: repo.active)
+                    .fixedSize()
+//                    Label(NSLocalizedString("Keyboard focesed screen(Accessibility permissions requested).", comment: ""), systemImage:"exclamationmark.circle")
+//                        .font(.caption)
+                }
+           
+               
+            }
+            
+
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(repo)
@@ -56,6 +76,6 @@ struct PreferencesView: View {
 
 struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesView()
+        PreferencesView().environmentObject(ShortcutRepository.shared)
     }
 }

@@ -41,6 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let menu = menu {
             statusItem?.menu = menu
         }
+        
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
