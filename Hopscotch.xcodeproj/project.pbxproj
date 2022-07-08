@@ -49,19 +49,19 @@
 		2019BB6B24A5D7A5000F2589 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2019BB6C24A5F18F000F2589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2019BB6E24A62CAD000F2589 /* ShortcutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutHelper.swift; sourceTree = "<group>"; };
-		203C0F1F286AF39300E6900F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../hopscreen/Library/Package.swift; sourceTree = "<group>"; };
-		2051DE4624A342E2004F5D09 /* Hopscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		203C0F1F286AF39300E6900F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../hopscotch/Library/Package.swift; sourceTree = "<group>"; };
+		2051DE4624A342E2004F5D09 /* Hopscotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hopscotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE4924A342E2004F5D09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2051DE4B24A342E2004F5D09 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		2051DE4D24A342E5004F5D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2051DE5024A342E5004F5D09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2051DE5324A342E5004F5D09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2051DE5524A342E5004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2051DE5624A342E6004F5D09 /* Hopscreen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hopscreen.entitlements; sourceTree = "<group>"; };
-		2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2051DE5624A342E6004F5D09 /* Hopscotch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hopscotch.entitlements; sourceTree = "<group>"; };
+		2051DE5B24A342E6004F5D09 /* HopscotchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscotchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE5F24A342E6004F5D09 /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		2051DE6124A342E6004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2051DE6624A342E6004F5D09 /* HopscotchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopscotchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2051DE6A24A342E6004F5D09 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		2051DE6C24A342E6004F5D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2051DE7824A35A04004F5D09 /* ScreenFocusHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFocusHelper.swift; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 		2051DE3D24A342E2004F5D09 = {
 			isa = PBXGroup;
 			children = (
-				2051DE4824A342E2004F5D09 /* Hopscreen */,
-				2051DE5E24A342E6004F5D09 /* HopscreenTests */,
-				2051DE6924A342E6004F5D09 /* HopscreenUITests */,
+				2051DE4824A342E2004F5D09 /* Hopscotch */,
+				2051DE5E24A342E6004F5D09 /* HopscotchTests */,
+				2051DE6924A342E6004F5D09 /* HopscotchUITests */,
 				2051DE4724A342E2004F5D09 /* Products */,
 				6037614524CFCD6F005FB7A9 /* Frameworks */,
 			);
@@ -114,14 +114,14 @@
 		2051DE4724A342E2004F5D09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2051DE4624A342E2004F5D09 /* Hopscreen.app */,
-				2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */,
-				2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */,
+				2051DE4624A342E2004F5D09 /* Hopscotch.app */,
+				2051DE5B24A342E6004F5D09 /* HopscotchTests.xctest */,
+				2051DE6624A342E6004F5D09 /* HopscotchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2051DE4824A342E2004F5D09 /* Hopscreen */ = {
+		2051DE4824A342E2004F5D09 /* Hopscotch */ = {
 			isa = PBXGroup;
 			children = (
 				2054926425134C60008ED4B8 /* effect */,
@@ -136,11 +136,11 @@
 				2051DE4D24A342E5004F5D09 /* Assets.xcassets */,
 				2051DE5224A342E5004F5D09 /* Main.storyboard */,
 				2051DE5524A342E5004F5D09 /* Info.plist */,
-				2051DE5624A342E6004F5D09 /* Hopscreen.entitlements */,
+				2051DE5624A342E6004F5D09 /* Hopscotch.entitlements */,
 				2051DE4F24A342E5004F5D09 /* Preview Content */,
 				2019BB6924A5D657000F2589 /* Localizable.strings */,
 			);
-			path = Hopscreen;
+			path = Hopscotch;
 			sourceTree = "<group>";
 		};
 		2051DE4F24A342E5004F5D09 /* Preview Content */ = {
@@ -151,22 +151,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2051DE5E24A342E6004F5D09 /* HopscreenTests */ = {
+		2051DE5E24A342E6004F5D09 /* HopscotchTests */ = {
 			isa = PBXGroup;
 			children = (
 				2051DE5F24A342E6004F5D09 /* DemoTests.swift */,
 				2051DE6124A342E6004F5D09 /* Info.plist */,
 			);
-			path = HopscreenTests;
+			path = HopscotchTests;
 			sourceTree = "<group>";
 		};
-		2051DE6924A342E6004F5D09 /* HopscreenUITests */ = {
+		2051DE6924A342E6004F5D09 /* HopscotchUITests */ = {
 			isa = PBXGroup;
 			children = (
 				2051DE6A24A342E6004F5D09 /* DemoUITests.swift */,
 				2051DE6C24A342E6004F5D09 /* Info.plist */,
 			);
-			path = HopscreenUITests;
+			path = HopscotchUITests;
 			sourceTree = "<group>";
 		};
 		2054926425134C60008ED4B8 /* effect */ = {
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2051DE4524A342E2004F5D09 /* Hopscreen */ = {
+		2051DE4524A342E2004F5D09 /* Hopscotch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscreen" */;
+			buildConfigurationList = 2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscotch" */;
 			buildPhases = (
 				2051DE4224A342E2004F5D09 /* Sources */,
 				2051DE4324A342E2004F5D09 /* Frameworks */,
@@ -212,17 +212,17 @@
 			);
 			dependencies = (
 			);
-			name = Hopscreen;
+			name = Hopscotch;
 			packageProductDependencies = (
 				2014D2A9286AF4B700D7F3BD /* Library */,
 			);
 			productName = Demo;
-			productReference = 2051DE4624A342E2004F5D09 /* Hopscreen.app */;
+			productReference = 2051DE4624A342E2004F5D09 /* Hopscotch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2051DE5A24A342E6004F5D09 /* HopscreenTests */ = {
+		2051DE5A24A342E6004F5D09 /* HopscotchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenTests" */;
+			buildConfigurationList = 2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscotchTests" */;
 			buildPhases = (
 				2051DE5724A342E6004F5D09 /* Sources */,
 				2051DE5824A342E6004F5D09 /* Frameworks */,
@@ -233,14 +233,14 @@
 			dependencies = (
 				2051DE5D24A342E6004F5D09 /* PBXTargetDependency */,
 			);
-			name = HopscreenTests;
+			name = HopscotchTests;
 			productName = DemoTests;
-			productReference = 2051DE5B24A342E6004F5D09 /* HopscreenTests.xctest */;
+			productReference = 2051DE5B24A342E6004F5D09 /* HopscotchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2051DE6524A342E6004F5D09 /* HopscreenUITests */ = {
+		2051DE6524A342E6004F5D09 /* HopscotchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenUITests" */;
+			buildConfigurationList = 2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscotchUITests" */;
 			buildPhases = (
 				2051DE6224A342E6004F5D09 /* Sources */,
 				2051DE6324A342E6004F5D09 /* Frameworks */,
@@ -251,9 +251,9 @@
 			dependencies = (
 				2051DE6824A342E6004F5D09 /* PBXTargetDependency */,
 			);
-			name = HopscreenUITests;
+			name = HopscotchUITests;
 			productName = DemoUITests;
-			productReference = 2051DE6624A342E6004F5D09 /* HopscreenUITests.xctest */;
+			productReference = 2051DE6624A342E6004F5D09 /* HopscotchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscreen" */;
+			buildConfigurationList = 2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscotch" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,9 +296,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2051DE4524A342E2004F5D09 /* Hopscreen */,
-				2051DE5A24A342E6004F5D09 /* HopscreenTests */,
-				2051DE6524A342E6004F5D09 /* HopscreenUITests */,
+				2051DE4524A342E2004F5D09 /* Hopscotch */,
+				2051DE5A24A342E6004F5D09 /* HopscotchTests */,
+				2051DE6524A342E6004F5D09 /* HopscotchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -391,12 +391,12 @@
 /* Begin PBXTargetDependency section */
 		2051DE5D24A342E6004F5D09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2051DE4524A342E2004F5D09 /* Hopscreen */;
+			target = 2051DE4524A342E2004F5D09 /* Hopscotch */;
 			targetProxy = 2051DE5C24A342E6004F5D09 /* PBXContainerItemProxy */;
 		};
 		2051DE6824A342E6004F5D09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2051DE4524A342E2004F5D09 /* Hopscreen */;
+			target = 2051DE4524A342E2004F5D09 /* Hopscotch */;
 			targetProxy = 2051DE6724A342E6004F5D09 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -541,16 +541,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Hopscreen/Hopscreen.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hopscotch/Hopscotch.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Hopscreen/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Hopscotch/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Hopscreen/Info.plist;
+				INFOPLIST_FILE = Hopscotch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -568,16 +568,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Hopscreen/Hopscreen.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hopscotch/Hopscotch.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"Hopscreen/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Hopscotch/Preview Content\"";
 				DEVELOPMENT_TEAM = Q9JRKL6X9R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Hopscreen/Info.plist;
+				INFOPLIST_FILE = Hopscotch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -609,7 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscreen.app/Contents/MacOS/Hopscreen";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscotch.app/Contents/MacOS/Hopscotch";
 			};
 			name = Debug;
 		};
@@ -631,7 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = info.dourok.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscreen.app/Contents/MacOS/Hopscreen";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hopscotch.app/Contents/MacOS/Hopscotch";
 			};
 			name = Release;
 		};
@@ -678,7 +678,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscreen" */ = {
+		2051DE4124A342E2004F5D09 /* Build configuration list for PBXProject "Hopscotch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE6D24A342E6004F5D09 /* Debug */,
@@ -687,7 +687,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscreen" */ = {
+		2051DE6F24A342E6004F5D09 /* Build configuration list for PBXNativeTarget "Hopscotch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7024A342E6004F5D09 /* Debug */,
@@ -696,7 +696,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenTests" */ = {
+		2051DE7224A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscotchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7324A342E6004F5D09 /* Debug */,
@@ -705,7 +705,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscreenUITests" */ = {
+		2051DE7524A342E6004F5D09 /* Build configuration list for PBXNativeTarget "HopscotchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2051DE7624A342E6004F5D09 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2051DE4524A342E2004F5D09"
-               BuildableName = "Hopscreen.app"
-               BlueprintName = "Hopscreen"
-               ReferencedContainer = "container:Hopscreen.xcodeproj">
+               BuildableName = "Hopscotch.app"
+               BlueprintName = "Hopscotch"
+               ReferencedContainer = "container:Hopscotch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2051DE5A24A342E6004F5D09"
-               BuildableName = "HopscreenTests.xctest"
-               BlueprintName = "HopscreenTests"
-               ReferencedContainer = "container:Hopscreen.xcodeproj">
+               BuildableName = "HopscotchTests.xctest"
+               BlueprintName = "HopscotchTests"
+               ReferencedContainer = "container:Hopscotch.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2051DE6524A342E6004F5D09"
-               BuildableName = "HopscreenUITests.xctest"
-               BlueprintName = "HopscreenUITests"
-               ReferencedContainer = "container:Hopscreen.xcodeproj">
+               BuildableName = "HopscotchUITests.xctest"
+               BlueprintName = "HopscotchUITests"
+               ReferencedContainer = "container:Hopscotch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2051DE4524A342E2004F5D09"
-            BuildableName = "Hopscreen.app"
-            BlueprintName = "Hopscreen"
-            ReferencedContainer = "container:Hopscreen.xcodeproj">
+            BuildableName = "Hopscotch.app"
+            BlueprintName = "Hopscotch"
+            ReferencedContainer = "container:Hopscotch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2051DE4524A342E2004F5D09"
-            BuildableName = "Hopscreen.app"
-            BlueprintName = "Hopscreen"
-            ReferencedContainer = "container:Hopscreen.xcodeproj">
+            BuildableName = "Hopscotch.app"
+            BlueprintName = "Hopscotch"
+            ReferencedContainer = "container:Hopscotch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

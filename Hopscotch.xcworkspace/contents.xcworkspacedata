@@ -5,6 +5,6 @@
       location = "group:Library">
    </FileRef>
    <FileRef
-      location = "group:./Hopscreen.xcodeproj">
+      location = "group:./Hopscotch.xcodeproj">
    </FileRef>
 </Workspace>
