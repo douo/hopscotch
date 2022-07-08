@@ -37,18 +37,14 @@ struct PreferencesView: View {
                 Spacer()
                 HStack(alignment: .center){
                     Image(systemName: "exclamationmark.circle")
-                        .help(NSLocalizedString("Hopscreen needs Accessibility permissions to find active(keyboard focusing) screen.", comment: ""))
-                    
-                    ShortcutView(model: repo.active)
-                    .fixedSize()
-//                    Label(NSLocalizedString("Keyboard focesed screen(Accessibility permissions requested).", comment: ""), systemImage:"exclamationmark.circle")
-//                        .font(.caption)
+                        .help(
+                            Text(String(
+                                format: NSLocalizedString("%@ needs Accessibility permissions to find active(keyboard focusing) screen.", comment: ""),
+                                arguments: [appName()]))
+                            )
+                    ShortcutView(model: repo.active).fixedSize()
                 }
-           
-               
             }
-            
-
             Spacer()
             Text(NSLocalizedString("Assign:", comment: ""))
             ScreenList().environmentObject(repo)
@@ -78,4 +74,13 @@ struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
         PreferencesView().environmentObject(ShortcutRepository.shared)
     }
+}
+
+fileprivate func appName() -> String{
+    guard let name = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String
+    else{
+        print("[Warning]:Can't get app name.")
+        return "Unknown"
+    }
+    return name
 }

@@ -11,3 +11,4 @@
 "Assign:" = "指定屏幕：";
 "Hint:" = "视觉提示：";
 "Launch at login" = "开机自启动";
+"%@ needs Accessibility permissions to find active(keyboard focusing) screen." = "需要赋予 %@ 无障碍权限才能获取当前活跃（键盘焦点）屏幕。";
